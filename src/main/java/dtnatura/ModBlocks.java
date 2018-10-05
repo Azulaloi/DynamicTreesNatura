@@ -178,25 +178,25 @@ public class ModBlocks {
 
         willowLeavesProperties = new LeavesProperties(
                 NaturaOverworld.overworldLeaves2.getStateFromMeta(0),
-                new ItemStack(overworldLeavesAlephItem, 1, 0),
+                new ItemStack(overworldLeavesBetItem, 1, 0),
                 TreeRegistry.findCellKit("deciduous")
         );
 
         eucalyptusLeavesProperties = new LeavesProperties(
                 NaturaOverworld.overworldLeaves2.getStateFromMeta(1),
-                new ItemStack(overworldLeavesAlephItem, 1, 1),
+                new ItemStack(overworldLeavesBetItem, 1, 1),
                 TreeRegistry.findCellKit("deciduous")
         );
 
         hopseedLeavesProperties = new LeavesProperties(
                 NaturaOverworld.overworldLeaves2.getStateFromMeta(2),
-                new ItemStack(overworldLeavesAlephItem, 1, 2),
+                new ItemStack(overworldLeavesBetItem, 1, 2),
                 TreeRegistry.findCellKit("deciduous")
         );
 
         sakuraLeavesProperties = new LeavesProperties(
                 NaturaOverworld.overworldLeaves2.getStateFromMeta(3),
-                new ItemStack(overworldLeavesAlephItem, 1, 3),
+                new ItemStack(overworldLeavesBetItem, 1, 3),
                 TreeRegistry.findCellKit("deciduous")
         );
 
@@ -208,6 +208,7 @@ public class ModBlocks {
                 ghostwoodLeavesProperties,
                 bloodwoodLeavesProperties,
                 fusewoodLeavesProperties,
+                LeavesProperties.NULLPROPERTIES, //Darkwood Null
                 mapleLeavesProperties,
                 silverbellLeavesProperties,
                 amaranthLeavesProperties,
@@ -294,16 +295,11 @@ public class ModBlocks {
         BrewingRecipeRegistry.addRecipe(new ItemStack(ModItems.dendroPotion, 1, DendroPotion.DendroPotionType.TRANSFORM.getIndex()), seed, transformationPotion);
 
         ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaNether.netherSapling, 1, 0), seed, true);
-        ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaNether.netherSapling, 1, 1), seed, true);
-        ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaNether.netherSapling, 1, 2), seed, true);
         ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaNether.netherSapling2, 1, 0), seed, true);
-
         ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaOverworld.overworldSapling, 1, 0), seed, true);
-        ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaOverworld.overworldSapling, 1, 1), seed, true);
-        ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaOverworld.overworldSapling, 1, 2), seed, true);
-        ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaOverworld.overworldSapling, 1, 3), seed, true);
-
         ModRecipes.createDirtBucketExchangeRecipes(new ItemStack(NaturaOverworld.overworldSapling2, 1, 0), seed, true);
+
+
     }
 
     @SideOnly(Side.CLIENT)

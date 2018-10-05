@@ -12,3 +12,18 @@ item.dtnatura:willowseed.name=Willow Seed
 item.dtnatura:eucalyptusseed.name=Eucalyptus Seed
 item.dtnatura:hopseedseed.name=Hopseed Seed
 item.dtnatura:sakuraseed.name=Sakura Seed
+
+tile.dtnatura:ghostbranch.name=Dynamic Ghostwood Tree
+tile.dtnatura:darkbranch.name=Dynamic Darkwood Tree
+tile.dtnatura:fusebranch.name=Dynamic Fusewood Tree
+tile.dtnatura:bloodbranch.name=Dynamic Bloodwood Tree
+
+tile.dtnatura:maplebranch.name=Dynamic Maple Tree
+tile.dtnatura:silverbellbranch.name=Dynamic Silverbell Tree
+tile.dtnatura:amaranthbranch.name=Dynamic Amaranth Tree
+tile.dtnatura:tigerbranch.name=Dynamic Tiger Tree
+
+tile.dtnatura:willowbranch.name=Dynamic Willow Tree
+tile.dtnatura:eucalyptusbranch.name=Dynamic Eucalyptus Tree
+tile.dtnatura:hopseedbranch.name=Dynamic Hopseed Tree
+tile.dtnatura:sakurabranch.name=Dynamic Sakura Tree

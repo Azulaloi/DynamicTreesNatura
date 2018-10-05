@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "dtnatura:willowbranch#dynamictree" }
+  }
+}

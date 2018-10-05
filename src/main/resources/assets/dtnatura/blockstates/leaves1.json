@@ -3,7 +3,7 @@
   "defaults": {
     "transform": "forge:default-block",
     "model": "leaves",
-    "textures": { "all": "natura:blocks/leaves/overworld/maple_leaves" }
+    "textures": {  }
   },
   "variants": {
     "tree": {
