@@ -1,0 +1,22 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "transform": "forge:default-block",
+    "model": "leaves",
+    "textures": { "all": "natura:blocks/leaves/nether/ghostwood_leaves" }
+  },
+  "variants": {
+    "tree": {
+      "0": {"textures": { "all": "natura:blocks/leaves/nether/ghostwood_leaves" } },
+      "1": {"textures": { "all": "natura:blocks/leaves/nether/bloodwood_leaves" } },
+      "2": {"textures": { "all": "natura:blocks/leaves/nether/fusewood_leaves" } },
+      "3": {"textures": { "all": "natura:blocks/leaves/nether/ghostwood_leaves"} }
+    },
+    "hydro": {
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {}
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "dynamictrees:sapling",
+    "textures": {
+      "log": "natura:blocks/logs/nether/bloodwood_bark",
+      "leaves": "natura:blocks/leaves/nether/bloodwood_leaves"
+    }
+  },
+  "variants": {
+    "normal": [{
+
+    }]
+  }
+}
