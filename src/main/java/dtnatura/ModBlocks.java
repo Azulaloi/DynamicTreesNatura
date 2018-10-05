@@ -33,6 +33,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -108,15 +109,9 @@ public class ModBlocks {
 
         ghostwoodLeavesProperties = new LeavesProperties(
                 NaturaNether.netherLeaves.getStateFromMeta(0),
-//                netherLeaves.getDefaultState(),
                 new ItemStack(netherLeavesItem, 1, 0),
-//                new ItemStack(netherLeavesItem, 1, 0),
-                TreeRegistry.findCellKit("deciduous")) {
-            @Override
-            public int foliageColorMultiplier(IBlockState state, IBlockAccess world, BlockPos pos) {
-                return 0xffffff;
-            }
-        };
+                TreeRegistry.findCellKit("deciduous")
+        );
 
         bloodwoodLeavesProperties = new LeavesProperties(
                 NaturaNether.netherLeaves.getStateFromMeta(1),
@@ -168,6 +163,7 @@ public class ModBlocks {
                 TreeRegistry.findCellKit("deciduous")
         );
 
+
         tigerLeavesProperties = new LeavesProperties(
                 NaturaOverworld.overworldLeaves.getStateFromMeta(3),
                 new ItemStack(overworldLeavesAlephItem, 1, 3),
@@ -187,6 +183,7 @@ public class ModBlocks {
                 new ItemStack(overworldLeavesBetItem, 1, 1),
                 TreeRegistry.findCellKit("deciduous")
         );
+
 
         hopseedLeavesProperties = new LeavesProperties(
                 NaturaOverworld.overworldLeaves2.getStateFromMeta(2),
