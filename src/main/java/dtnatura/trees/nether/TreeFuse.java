@@ -10,7 +10,9 @@ import dtnatura.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 
@@ -46,6 +48,12 @@ public class TreeFuse extends TreeFamily {
 
         ModBlocks.fusewoodLeavesProperties.setTree(this);
     }
+
+    @Override
+    public ItemStack getPrimitiveLogItemStack(int qty) {
+        return new ItemStack(NaturaNether.netherLog, MathHelper.clamp(qty, 0, 64), 2);
+    }
+
 
     @Override
     public void createSpecies() {

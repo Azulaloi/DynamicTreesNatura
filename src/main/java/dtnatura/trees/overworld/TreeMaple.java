@@ -3,6 +3,7 @@ package dtnatura.trees.overworld;
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicSapling;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.TreeFamily;
+import com.progwml6.natura.nether.NaturaNether;
 import com.progwml6.natura.overworld.NaturaOverworld;
 import com.progwml6.natura.overworld.block.logs.BlockOverworldLog;
 import dtnatura.DynamicTreesNatura;
@@ -10,7 +11,9 @@ import dtnatura.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 
@@ -45,6 +48,12 @@ public class TreeMaple extends TreeFamily {
 
         ModBlocks.mapleLeavesProperties.setTree(this);
     }
+
+    @Override
+    public ItemStack getPrimitiveLogItemStack(int qty) {
+        return new ItemStack(NaturaOverworld.overworldLog, MathHelper.clamp(qty, 0, 64), 0);
+    }
+
 
     @Override
     public void createSpecies() {

@@ -16,6 +16,7 @@ import net.minecraft.init.Biomes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -30,7 +31,7 @@ public class TreeBlood extends TreeFamily{
         SpeciesBlood (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.bloodwoodLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, -2, -16, 8f);
+            setBasicGrowingParameters(0.3f, 12.0f, -4, -16, 8f);
 
             setDynamicSapling(new BlockDynamicSaplingInverse("bloodsapling").getDefaultState());
 
@@ -74,6 +75,11 @@ public class TreeBlood extends TreeFamily{
         setPrimitiveLog(primLog);
 
         ModBlocks.bloodwoodLeavesProperties.setTree(this);
+    }
+
+    @Override
+    public ItemStack getPrimitiveLogItemStack(int qty) {
+        return new ItemStack(NaturaNether.netherLog2, MathHelper.clamp(qty, 0, 64), 0);
     }
 
     @Override

@@ -10,7 +10,9 @@ import dtnatura.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 
@@ -44,6 +46,11 @@ public class TreeSilverbell extends TreeFamily {
         setPrimitiveLog(primLog);
 
         ModBlocks.silverbellLeavesProperties.setTree(this);
+    }
+
+    @Override
+    public ItemStack getPrimitiveLogItemStack(int qty) {
+        return new ItemStack(NaturaOverworld.overworldLog, MathHelper.clamp(qty, 0, 64), 1);
     }
 
     @Override
