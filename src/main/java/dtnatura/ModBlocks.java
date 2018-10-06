@@ -17,6 +17,7 @@ import com.progwml6.natura.nether.block.leaves.BlockNetherLeaves;
 import com.progwml6.natura.overworld.NaturaOverworld;
 import com.sun.org.glassfish.gmbal.GmbalException;
 import dtnatura.blocks.BlockDynamicLeavesPotash;
+import dtnatura.blocks.BlockRootyInverse;
 import dtnatura.trees.nether.TreeBlood;
 import dtnatura.trees.nether.TreeDark;
 import dtnatura.trees.nether.TreeFuse;
@@ -52,6 +53,8 @@ import java.util.Random;
 @Mod.EventBusSubscriber(modid = DynamicTreesNatura.MODID)
 public class ModBlocks {
 
+    public static BlockRootyInverse blockRootyInverse;
+
     public static BlockDynamicLeavesPotash potashLeaves;
 
     public static ILeavesProperties ghostwoodLeavesProperties;
@@ -76,6 +79,8 @@ public class ModBlocks {
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
+
+        blockRootyInverse = new BlockRootyInverse("rootyinverse", false);
 
 //        Block netherLeaves = NaturaNether.netherLeaves;
         Item netherLeavesItem = new ItemBlock(NaturaNether.netherLeaves);
@@ -256,6 +261,8 @@ public class ModBlocks {
         trees.forEach(tree -> tree.getRegisterableBlocks(treeBlocks));
         treeBlocks.addAll(TreeHelper.getLeavesMapForModId(DynamicTreesNatura.MODID).values());
         registry.registerAll(treeBlocks.toArray(new Block[treeBlocks.size()]));
+
+        registry.registerAll(blockRootyInverse);
     }
 
     @SubscribeEvent
