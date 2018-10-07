@@ -121,8 +121,18 @@ public class ModBlocks {
         bloodwoodLeavesProperties = new LeavesProperties(
                 NaturaNether.netherLeaves.getStateFromMeta(1),
                 new ItemStack(netherLeavesItem, 1, 1),
-                TreeRegistry.findCellKit("deciduous")
-        );
+                TreeRegistry.findCellKit("darkoak")) {
+
+            @Override
+            public int getLightRequirement() {
+                return 1;
+            }
+
+            @Override
+            public int getSmotherLeavesMax() {
+                return 6;
+            }
+        };
 
         fusewoodLeavesProperties = new LeavesProperties(
                 NaturaNether.netherLeaves.getStateFromMeta(2),
@@ -186,8 +196,12 @@ public class ModBlocks {
         eucalyptusLeavesProperties = new LeavesProperties(
                 NaturaOverworld.overworldLeaves2.getStateFromMeta(1),
                 new ItemStack(overworldLeavesBetItem, 1, 1),
-                TreeRegistry.findCellKit("deciduous")
-        );
+                TreeRegistry.findCellKit("acacia")) {
+            @Override
+            public int getSmotherLeavesMax() {
+                return 3;
+            }
+        };
 
 
         hopseedLeavesProperties = new LeavesProperties(
