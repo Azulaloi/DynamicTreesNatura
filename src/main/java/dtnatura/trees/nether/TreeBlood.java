@@ -16,6 +16,7 @@ import dtnatura.items.SeedInverse;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -43,6 +44,9 @@ public class TreeBlood extends TreeFamily{
 
             generateSeed();
             setupStandardSeedDropping();
+
+            clearAcceptableSoils();
+            addAcceptableSoil(Blocks.NETHERRACK);
         }
 
         @Override
@@ -50,7 +54,7 @@ public class TreeBlood extends TreeFamily{
 
         @Override
         public BlockRooty getRootyBlock(){
-            return ModBlocks.blockRootyInverse;
+            return ModBlocks.blockRootyInverseNetherrack;
         }
 
         public ItemStack generateSeed() {

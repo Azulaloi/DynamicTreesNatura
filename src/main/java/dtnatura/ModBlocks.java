@@ -8,6 +8,7 @@ import com.ferreusveritas.dynamictrees.api.TreeRegistry;
 import com.ferreusveritas.dynamictrees.api.client.ModelHelper;
 import com.ferreusveritas.dynamictrees.api.treedata.ILeavesProperties;
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicLeaves;
+import com.ferreusveritas.dynamictrees.blocks.BlockRooty;
 import com.ferreusveritas.dynamictrees.blocks.LeavesProperties;
 import com.ferreusveritas.dynamictrees.items.DendroPotion;
 import com.ferreusveritas.dynamictrees.trees.Species;
@@ -18,6 +19,7 @@ import com.progwml6.natura.overworld.NaturaOverworld;
 import com.sun.org.glassfish.gmbal.GmbalException;
 import dtnatura.blocks.BlockDynamicLeavesPotash;
 import dtnatura.blocks.BlockRootyInverse;
+import dtnatura.blocks.BlockRootyInverseNetherrack;
 import dtnatura.trees.nether.TreeBlood;
 import dtnatura.trees.nether.TreeDark;
 import dtnatura.trees.nether.TreeFuse;
@@ -25,8 +27,10 @@ import dtnatura.trees.nether.TreeGhost;
 import dtnatura.trees.overworld.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -53,7 +57,7 @@ import java.util.Random;
 @Mod.EventBusSubscriber(modid = DynamicTreesNatura.MODID)
 public class ModBlocks {
 
-    public static BlockRootyInverse blockRootyInverse;
+    public static BlockRootyInverse blockRootyInverseNetherrack;
 
     public static BlockDynamicLeavesPotash potashLeaves;
 
@@ -80,7 +84,11 @@ public class ModBlocks {
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
 
-        blockRootyInverse = new BlockRootyInverse("rootyinverse", false);
+        // ROOTS
+
+        blockRootyInverseNetherrack = new BlockRootyInverseNetherrack("rootyinversenetherrack", false, Material.ROCK);
+
+        // LEAF BLOCKS & ITEMBLOCKS
 
 //        Block netherLeaves = NaturaNether.netherLeaves;
         Item netherLeavesItem = new ItemBlock(NaturaNether.netherLeaves);
@@ -217,7 +225,7 @@ public class ModBlocks {
         );
 
         ////////
-        //REGISTER LEAVES
+        //REGISTER LEAVES PROPERTIES
         ////////
 
         basicLeavesProperties = new ILeavesProperties[] {
@@ -276,7 +284,7 @@ public class ModBlocks {
         treeBlocks.addAll(TreeHelper.getLeavesMapForModId(DynamicTreesNatura.MODID).values());
         registry.registerAll(treeBlocks.toArray(new Block[treeBlocks.size()]));
 
-        registry.registerAll(blockRootyInverse);
+        registry.registerAll(blockRootyInverseNetherrack);
     }
 
     @SubscribeEvent
@@ -332,5 +340,7 @@ public class ModBlocks {
         TreeHelper.getLeavesMapForModId(DynamicTreesNatura.MODID).forEach((key,leaves) -> ModelLoader.setCustomStateMapper(leaves, new StateMap.Builder().ignore(BlockLeaves.DECAYABLE).build()));
 
         ModelLoader.setCustomStateMapper(ModBlocks.darkwoodLeavesProperties.getDynamicLeavesState().getBlock(), new StateMap.Builder().ignore(BlockDynamicLeaves.TREE).ignore(BlockDynamicLeavesPotash.HYDRO).build());
+
+        ModelLoader.setCustomStateMapper(ModBlocks.blockRootyInverseNetherrack, new StateMap.Builder().ignore(BlockRooty.LIFE).build());
     }
 }

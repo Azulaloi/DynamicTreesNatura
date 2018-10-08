@@ -5,7 +5,8 @@
     "textures": {
       "log": "natura:blocks/logs/nether/bloodwood_bark",
       "leaves": "natura:blocks/leaves/nether/bloodwood_leaves"
-    }
+    },
+    "x": 180
   },
   "variants": {
     "normal": [{

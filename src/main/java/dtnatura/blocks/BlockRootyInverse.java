@@ -6,6 +6,8 @@ import com.ferreusveritas.dynamictrees.blocks.BlockRooty;
 import com.ferreusveritas.dynamictrees.entities.EntityFallingTree;
 import com.ferreusveritas.dynamictrees.util.BranchDestructionData;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -13,13 +15,14 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BlockRootyInverse extends BlockRooty {
 
-    public BlockRootyInverse(String name, boolean isTileEntity) {
-        super(name, Material.GROUND, isTileEntity);
-    }
+    public BlockRootyInverse(String name, boolean isTileEntity, Material material) {
+        super(name, material, isTileEntity);
 
+    }
 
     @Override
     public EnumFacing getTrunkDirection(IBlockAccess access, BlockPos rootPos) {
@@ -34,7 +37,4 @@ public class BlockRootyInverse extends BlockRooty {
             EntityFallingTree.dropTree(world, data, new ArrayList<ItemStack>(0), EntityFallingTree.DestroyType.ROOT);
         }
     }
-
-
-
 }
