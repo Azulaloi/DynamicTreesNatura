@@ -1,29 +1,29 @@
-item.dtnatura:ghostseed.name=Ghost Seed
-item.dtnatura:darkseed.name=Dark Seed
-item.dtnatura:fuseseed.name=Fuse Seed
-item.dtnatura:bloodseed.name=Blood Seed
+item.com.github.azulaloi.dtnatura:ghostseed.name=Ghost Seed
+item.com.github.azulaloi.dtnatura:darkseed.name=Dark Seed
+item.com.github.azulaloi.dtnatura:fuseseed.name=Fuse Seed
+item.com.github.azulaloi.dtnatura:bloodseed.name=Blood Seed
 
-item.dtnatura:mapleseed.name=Maple Seed
-item.dtnatura:silverbellseed.name=Silverbell Seed
-item.dtnatura:amaranthseed.name=Amaranth Seed
-item.dtnatura:tigerseed.name=Tiger Seed
+item.com.github.azulaloi.dtnatura:mapleseed.name=Maple Seed
+item.com.github.azulaloi.dtnatura:silverbellseed.name=Silverbell Seed
+item.com.github.azulaloi.dtnatura:amaranthseed.name=Amaranth Seed
+item.com.github.azulaloi.dtnatura:tigerseed.name=Tiger Seed
 
-item.dtnatura:willowseed.name=Willow Seed
-item.dtnatura:eucalyptusseed.name=Eucalyptus Seed
-item.dtnatura:hopseedseed.name=Hopseed Seed
-item.dtnatura:sakuraseed.name=Sakura Seed
+item.com.github.azulaloi.dtnatura:willowseed.name=Willow Seed
+item.com.github.azulaloi.dtnatura:eucalyptusseed.name=Eucalyptus Seed
+item.com.github.azulaloi.dtnatura:hopseedseed.name=Hopseed Seed
+item.com.github.azulaloi.dtnatura:sakuraseed.name=Sakura Seed
 
-tile.dtnatura:ghostbranch.name=Dynamic Ghostwood Tree
-tile.dtnatura:darkbranch.name=Dynamic Darkwood Tree
-tile.dtnatura:fusebranch.name=Dynamic Fusewood Tree
-tile.dtnatura:bloodbranch.name=Dynamic Bloodwood Tree
+tile.com.github.azulaloi.dtnatura:ghostbranch.name=Dynamic Ghostwood Tree
+tile.com.github.azulaloi.dtnatura:darkbranch.name=Dynamic Darkwood Tree
+tile.com.github.azulaloi.dtnatura:fusebranch.name=Dynamic Fusewood Tree
+tile.com.github.azulaloi.dtnatura:bloodbranch.name=Dynamic Bloodwood Tree
 
-tile.dtnatura:maplebranch.name=Dynamic Maple Tree
-tile.dtnatura:silverbellbranch.name=Dynamic Silverbell Tree
-tile.dtnatura:amaranthbranch.name=Dynamic Amaranth Tree
-tile.dtnatura:tigerbranch.name=Dynamic Tiger Tree
+tile.com.github.azulaloi.dtnatura:maplebranch.name=Dynamic Maple Tree
+tile.com.github.azulaloi.dtnatura:silverbellbranch.name=Dynamic Silverbell Tree
+tile.com.github.azulaloi.dtnatura:amaranthbranch.name=Dynamic Amaranth Tree
+tile.com.github.azulaloi.dtnatura:tigerbranch.name=Dynamic Tiger Tree
 
-tile.dtnatura:willowbranch.name=Dynamic Willow Tree
-tile.dtnatura:eucalyptusbranch.name=Dynamic Eucalyptus Tree
-tile.dtnatura:hopseedbranch.name=Dynamic Hopseed Tree
-tile.dtnatura:sakurabranch.name=Dynamic Sakura Tree
+tile.com.github.azulaloi.dtnatura:willowbranch.name=Dynamic Willow Tree
+tile.com.github.azulaloi.dtnatura:eucalyptusbranch.name=Dynamic Eucalyptus Tree
+tile.com.github.azulaloi.dtnatura:hopseedbranch.name=Dynamic Hopseed Tree
+tile.com.github.azulaloi.dtnatura:sakurabranch.name=Dynamic Sakura Tree
