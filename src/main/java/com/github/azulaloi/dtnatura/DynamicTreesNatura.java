@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid=DynamicTreesNatura.MODID, name=DynamicTreesNatura.NAME, version=DynamicTreesNatura.VERSION, dependencies=DynamicTreesNatura.DEPENDENCIES)
 public class DynamicTreesNatura {
 
-    public static final String MODID = "com/github/azulaloi/dtnatura";
+    public static final String MODID = "dtnatura";
     public static final String NAME = "Dynamic Trees Natura";
     public static final String VERSION = "@VERSION@";
     public static final String DEPENDENCIES = "required-after:dynamictrees@[1.12.2-0.8.1i,);required-after:natura";
@@ -18,7 +18,7 @@ public class DynamicTreesNatura {
     @Mod.Instance
     public static DynamicTreesNatura instance;
 
-    @SidedProxy(clientSide = "com.github.azulaloi.dtnatura.proxy.ClientProxy", serverSide = "dttraverse.proxy.CommonProxy")
+    @SidedProxy(clientSide = "com.github.azulaloi.dtnatura.proxy.ClientProxy", serverSide = "com.github.azulaloi.proxy.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
