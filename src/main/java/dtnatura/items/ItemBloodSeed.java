@@ -1,9 +1,12 @@
 package dtnatura.items;
 
 import jline.internal.Nullable;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemBloodSeed extends SeedInverse {
@@ -44,18 +47,34 @@ public class ItemBloodSeed extends SeedInverse {
         @Override
         public void onUpdate() {
 
-            //TODO: make this floaty boy go up when over heat sources
-            //Nether ecology 101: Adaptation to the infernal environment
-            //The bloodwood tree, Inferae sanguinatum, has evolved to utilize the
-            //nether's chaotic thermal drafts as a method of spreading over great distances.
-            //Much like a dandelion, bloodleaf seeds are lightweight with fluffy "parachutes"
-            //that produce drag. The large magma basins, lava floes, and rackfires present in
-            //the nether all produce heat, and therefore rising air - which the bloodleaf seed
-            //will ride until it sticks to the cave ceiling, where it sprout and burrow into the
-            //soft infernal stone.
+            //Nether Ecology 101: Adaptation to the Infernal Environment
+            //  The bloodwood tree, Inferae sanguinatum, has evolved to utilize the nether's
+            //  chaotic thermal drafts as a method of spreading over great distances. Much like
+            //  a dandelion, bloodleaf seeds are lightweight with fluffy "parachutes" that catch
+            //  the wind. The large magma basins, lava floes, and rackfires present in the nether
+            //  all produce heat, and therefore rising air - which the bloodleaf seed will ride until
+            //  it sticks to the cave ceiling, where it sprout and burrow into the soft infernal stone.
 
+            BlockPos pos = this.getPosition();
+            World world = this.world;
+
+            //glide
             motionY += 0.039;
-            //motionY += motionY < 0 ? 0.0385 : 0.036;
+
+            //100 should be enough to germinate roof of nether oceans
+            for (int i = 0; i < 100; i++) { //check performance on this
+                Block block = world.getBlockState(pos.down(i)).getBlock();
+                if (block.equals(Blocks.FIRE) || block.equals(Blocks.LAVA) || block.equals(Blocks.FLOWING_LAVA)) {
+                    addVelocity(0, 0.005, 0);
+                    //motionY *= 1.005; //TODO: scale to distance of heat?
+                    break;
+                } else if (!block.equals(Blocks.AIR)) {
+                    break;
+                }
+            }
+
+
+            //TODO: Plant yourself upside down
 
             super.onUpdate();
         }
