@@ -12,6 +12,7 @@ import com.progwml6.natura.nether.block.logs.BlockNetherLog;
 import dtnatura.DynamicTreesNatura;
 import dtnatura.ModBlocks;
 import dtnatura.blocks.BlockDynamicSaplingInverse;
+import dtnatura.items.ItemBloodSeed;
 import dtnatura.items.SeedInverse;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -58,7 +59,7 @@ public class TreeBlood extends TreeFamily{
         }
 
         public ItemStack generateSeed() {
-            SeedInverse seed = new SeedInverse(getRegistryName().getResourcePath() + "seed");
+            SeedInverse seed = new ItemBloodSeed(getRegistryName().getResourcePath() + "seed");
             return setSeedStack(new ItemStack(seed));
         }
 

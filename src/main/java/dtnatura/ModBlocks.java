@@ -20,6 +20,7 @@ import com.sun.org.glassfish.gmbal.GmbalException;
 import dtnatura.blocks.BlockDynamicLeavesPotash;
 import dtnatura.blocks.BlockRootyInverse;
 import dtnatura.blocks.BlockRootyInverseNetherrack;
+import dtnatura.items.ItemBloodSeed;
 import dtnatura.trees.nether.TreeBlood;
 import dtnatura.trees.nether.TreeDark;
 import dtnatura.trees.nether.TreeFuse;
@@ -45,6 +46,8 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -342,5 +345,12 @@ public class ModBlocks {
         ModelLoader.setCustomStateMapper(ModBlocks.darkwoodLeavesProperties.getDynamicLeavesState().getBlock(), new StateMap.Builder().ignore(BlockDynamicLeaves.TREE).ignore(BlockDynamicLeavesPotash.HYDRO).build());
 
         ModelLoader.setCustomStateMapper(ModBlocks.blockRootyInverseNetherrack, new StateMap.Builder().ignore(BlockRooty.LIFE).build());
+    }
+
+    @SubscribeEvent
+    public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
+        int id = 0;
+
+        EntityRegistry.registerModEntity(new ResourceLocation(DynamicTreesNatura.MODID, "blood_seed"), ItemBloodSeed.EntityItemBloodSeed.class, "blood_seed", id++, DynamicTreesNatura.MODID, 32, 1, true);
     }
 }
