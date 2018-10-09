@@ -1,7 +1,16 @@
 [
-    {
-        "modid": "dtnatura",
-        "name": "Dynamic Trees Natura",
-        "description": "Eat Ass, Reel Bass"
-    }
+  {
+    "modid": "dtnatura",
+    "name": "Dynamic Trees Natura",
+    "description": "Replaces Natura trees with Dynamic Trees trees.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/Azulaloi/DynamicTreesNatura",
+    "updateUrl": "",
+    "authors": ["Azulaloi"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]
