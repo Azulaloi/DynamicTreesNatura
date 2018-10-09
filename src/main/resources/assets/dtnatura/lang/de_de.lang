@@ -1,0 +1,29 @@
+item.com.github.azulaloi.dtnatura:ghostseed.name=Geistsamen
+item.com.github.azulaloi.dtnatura:darkseed.name=Dunkelsamen
+item.com.github.azulaloi.dtnatura:fuseseed.name=Sicherungsamen
+item.com.github.azulaloi.dtnatura:bloodseed.name=Blutsamen
+
+item.com.github.azulaloi.dtnatura:mapleseed.name=Ahornsamen
+item.com.github.azulaloi.dtnatura:silverbellseed.name=Schneeglöckchensamen
+item.com.github.azulaloi.dtnatura:amaranthseed.name=Amaranthsamen
+item.com.github.azulaloi.dtnatura:tigerseed.name=Tigersamen
+
+item.com.github.azulaloi.dtnatura:willowseed.name=Weidensamen
+item.com.github.azulaloi.dtnatura:eucalyptusseed.name=Eukalyptussamen
+item.com.github.azulaloi.dtnatura:hopseedseed.name=Hopfensamen
+item.com.github.azulaloi.dtnatura:sakuraseed.name=Kirschblütensamen
+
+tile.com.github.azulaloi.dtnatura:ghostbranch.name=Dynamischer Geistholzbaum
+tile.com.github.azulaloi.dtnatura:darkbranch.name=Dynamischer Dunkelholzbaum
+tile.com.github.azulaloi.dtnatura:fusebranch.name=Dynamischer Sicherungholzbaum
+tile.com.github.azulaloi.dtnatura:bloodbranch.name=Dynamischer Blutholzbaum
+
+tile.com.github.azulaloi.dtnatura:maplebranch.name=Dynamischer Ahornbaum
+tile.com.github.azulaloi.dtnatura:silverbellbranch.name=Dynamischer Schneeglöckchenbaum
+tile.com.github.azulaloi.dtnatura:amaranthbranch.name=Dynamischer Amaranthbaum
+tile.com.github.azulaloi.dtnatura:tigerbranch.name=Dynamischer Tigerbaum
+
+tile.com.github.azulaloi.dtnatura:willowbranch.name=Dynamischer Weidenbaum
+tile.com.github.azulaloi.dtnatura:eucalyptusbranch.name=Dynamischer Eukalyptusbaum
+tile.com.github.azulaloi.dtnatura:hopseedbranch.name=Dynamischer Hopsebaum
+tile.com.github.azulaloi.dtnatura:sakurabranch.name=Dynamischer Kirschblütenbaum
