@@ -1,6 +1,7 @@
 package com.github.azulaloi.dtnatura.trees.nether;
 
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicSapling;
+import com.ferreusveritas.dynamictrees.blocks.BlockRooty;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.TreeFamily;
 import com.progwml6.natura.nether.NaturaNether;
@@ -10,6 +11,7 @@ import com.github.azulaloi.dtnatura.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -33,11 +35,19 @@ public class TreeGhost extends TreeFamily {
 
             generateSeed();
             setupStandardSeedDropping();
+
+            clearAcceptableSoils();
+            addAcceptableSoil(Blocks.NETHERRACK);
         }
 
         @Override
         public boolean isBiomePerfect(Biome biome) {
             return isOneOfBiomes(biome, Biomes.HELL);
+        }
+
+        @Override
+        public BlockRooty getRootyBlock() {
+            return ModBlocks.blockRootyNetherrack;
         }
     }
 

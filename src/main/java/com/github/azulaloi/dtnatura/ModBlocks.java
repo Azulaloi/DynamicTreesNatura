@@ -12,6 +12,7 @@ import com.ferreusveritas.dynamictrees.blocks.LeavesProperties;
 import com.ferreusveritas.dynamictrees.items.DendroPotion;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.TreeFamily;
+import com.github.azulaloi.dtnatura.blocks.BlockRootyNetherrack;
 import com.progwml6.natura.nether.NaturaNether;
 import com.progwml6.natura.overworld.NaturaOverworld;
 import com.github.azulaloi.dtnatura.blocks.BlockDynamicLeavesPotash;
@@ -54,6 +55,7 @@ import java.util.Random;
 public class ModBlocks {
 
     public static BlockRootyInverse blockRootyInverseNetherrack;
+    public static BlockRootyNetherrack blockRootyNetherrack;
 
     public static BlockDynamicLeavesPotash potashLeaves;
 
@@ -83,6 +85,7 @@ public class ModBlocks {
         // ROOTS
 
         blockRootyInverseNetherrack = new BlockRootyInverseNetherrack("rootyinversenetherrack", false, Material.ROCK);
+        blockRootyNetherrack = new BlockRootyNetherrack("rootynetherrack", false, Material.ROCK);
 
         // LEAF BLOCKS & ITEMBLOCKS
 
@@ -119,8 +122,13 @@ public class ModBlocks {
         ghostwoodLeavesProperties = new LeavesProperties(
                 NaturaNether.netherLeaves.getStateFromMeta(0),
                 new ItemStack(netherLeavesItem, 1, 0),
-                TreeRegistry.findCellKit("deciduous")
-        );
+                TreeRegistry.findCellKit("deciduous")) {
+
+            @Override
+            public int getLightRequirement() {
+                return 0;
+            }
+        };
 
         bloodwoodLeavesProperties = new LeavesProperties(
                 NaturaNether.netherLeaves.getStateFromMeta(1),
@@ -129,7 +137,7 @@ public class ModBlocks {
 
             @Override
             public int getLightRequirement() {
-                return 1;
+                return 0;
             }
 
             @Override
@@ -141,12 +149,23 @@ public class ModBlocks {
         fusewoodLeavesProperties = new LeavesProperties(
                 NaturaNether.netherLeaves.getStateFromMeta(2),
                 new ItemStack(netherLeavesItem, 1, 2),
-                TreeRegistry.findCellKit("deciduous")
-        );
+                TreeRegistry.findCellKit("deciduous")) {
+
+            @Override
+            public int getLightRequirement() {
+                return 0;
+            }
+        };
 
         darkwoodLeavesProperties = new LeavesProperties(
                 darkwoodLeaves.getDefaultState(),
                 new ItemStack(darkwoodLeavesItem)) {
+
+            @Override
+            public int getLightRequirement() {
+                return 0;
+            }
+
             Random rand = new Random();
 
             @Override

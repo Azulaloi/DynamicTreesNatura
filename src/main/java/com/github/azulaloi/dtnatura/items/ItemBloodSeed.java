@@ -74,7 +74,7 @@ public class ItemBloodSeed extends SeedInverse {
             }
 
 
-            //TODO: Plant yourself upside down
+            //Superclass (Seed) plants properly upside-down
 
             super.onUpdate();
         }
