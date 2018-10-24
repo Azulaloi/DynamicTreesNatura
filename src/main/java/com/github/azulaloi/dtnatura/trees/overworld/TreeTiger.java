@@ -24,11 +24,11 @@ public class TreeTiger extends TreeFamily {
         SpeciesTiger (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.tigerLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.2f, 9.0f, upProbability, lowestBranchHeight, 6f);
 
             setDynamicSapling(new BlockDynamicSapling("tigersapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.PLAINS, 1.5f);
+            envFactor(BiomeDictionary.Type.FOREST, 1.3f);
 
             generateSeed();
             setupStandardSeedDropping();

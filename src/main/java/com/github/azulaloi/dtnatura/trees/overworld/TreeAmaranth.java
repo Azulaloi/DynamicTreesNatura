@@ -24,11 +24,11 @@ public class TreeAmaranth extends TreeFamily {
         SpeciesAmaranth (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.amaranthLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.2f, 18.0f, upProbability, 8, 8f);
 
             setDynamicSapling(new BlockDynamicSapling("amaranthsapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.PLAINS, 1.5f);
+            envFactor(BiomeDictionary.Type.JUNGLE, 1.5f);
 
             generateSeed();
             setupStandardSeedDropping();

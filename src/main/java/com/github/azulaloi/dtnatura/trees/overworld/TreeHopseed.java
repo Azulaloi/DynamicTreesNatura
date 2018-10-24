@@ -1,8 +1,12 @@
 package com.github.azulaloi.dtnatura.trees.overworld;
 
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicSapling;
+import com.ferreusveritas.dynamictrees.items.Seed;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.TreeFamily;
+import com.github.azulaloi.dtnatura.items.ItemBloodSeed;
+import com.github.azulaloi.dtnatura.items.ItemMapleSeed;
+import com.github.azulaloi.dtnatura.items.SeedInverse;
 import com.progwml6.natura.overworld.NaturaOverworld;
 import com.progwml6.natura.overworld.block.logs.BlockOverworldLog2;
 import com.github.azulaloi.dtnatura.DynamicTreesNatura;
@@ -24,11 +28,11 @@ public class TreeHopseed extends TreeFamily {
         SpeciesHopseed (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.hopseedLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.2f, 10.0f, upProbability, 4, 9f);
 
             setDynamicSapling(new BlockDynamicSapling("hopseedsapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.PLAINS, 1.5f);
+            envFactor(BiomeDictionary.Type.MOUNTAIN, 1.5f);
 
             generateSeed();
             setupStandardSeedDropping();
@@ -36,6 +40,7 @@ public class TreeHopseed extends TreeFamily {
 
         @Override
         public boolean isBiomePerfect(Biome biome) { return isOneOfBiomes(biome, Biomes.PLAINS); }
+
     }
 
     public TreeHopseed() {

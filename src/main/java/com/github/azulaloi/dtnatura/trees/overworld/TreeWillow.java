@@ -24,11 +24,11 @@ public class TreeWillow extends TreeFamily {
         SpeciesWillow (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.willowLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.3f, 14.0f, upProbability, lowestBranchHeight, 6f);
 
             setDynamicSapling(new BlockDynamicSapling("willowsapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.PLAINS, 1.5f);
+            envFactor(BiomeDictionary.Type.SWAMP, 1.9f);
 
             generateSeed();
             setupStandardSeedDropping();

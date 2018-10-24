@@ -299,7 +299,7 @@ public class ModBlocks {
         treeBlocks.addAll(TreeHelper.getLeavesMapForModId(DynamicTreesNatura.MODID).values());
         registry.registerAll(treeBlocks.toArray(new Block[treeBlocks.size()]));
 
-        registry.registerAll(blockRootyInverseNetherrack);
+        registry.registerAll(blockRootyNetherrack, blockRootyInverseNetherrack);
     }
 
     @SubscribeEvent
@@ -357,6 +357,7 @@ public class ModBlocks {
         ModelLoader.setCustomStateMapper(ModBlocks.darkwoodLeavesProperties.getDynamicLeavesState().getBlock(), new StateMap.Builder().ignore(BlockDynamicLeaves.TREE).ignore(BlockDynamicLeavesPotash.HYDRO).build());
 
         ModelLoader.setCustomStateMapper(ModBlocks.blockRootyInverseNetherrack, new StateMap.Builder().ignore(BlockRooty.LIFE).build());
+        ModelLoader.setCustomStateMapper(ModBlocks.blockRootyNetherrack, new StateMap.Builder().ignore(BlockRooty.LIFE).build());
     }
 
     @SubscribeEvent

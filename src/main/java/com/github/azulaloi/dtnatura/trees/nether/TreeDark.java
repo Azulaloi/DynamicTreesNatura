@@ -27,7 +27,7 @@ public class TreeDark extends TreeFamily {
         SpeciesDark(TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.darkwoodLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8.0f);
+            setBasicGrowingParameters(0.1f, 7.0f, upProbability, lowestBranchHeight, 4.0f);
 
             setDynamicSapling(new BlockDynamicSapling("darksapling").getDefaultState());
 

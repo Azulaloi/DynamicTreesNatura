@@ -1,6 +1,7 @@
 package com.github.azulaloi.dtnatura.trees.overworld;
 
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicSapling;
+import com.ferreusveritas.dynamictrees.systems.GrowSignal;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.TreeFamily;
 import com.progwml6.natura.overworld.NaturaOverworld;
@@ -11,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Biomes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
@@ -24,11 +26,11 @@ public class TreeEucalyptus extends TreeFamily {
         SpeciesEucalyptus (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.eucalyptusLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.2f, 16.0f, 3, 5, 8f);
 
             setDynamicSapling(new BlockDynamicSapling("eucalyptussapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.FOREST, 1.5f);
+            envFactor(BiomeDictionary.Type.MOUNTAIN, 1.5f);
 
             generateSeed();
             setupStandardSeedDropping();
@@ -36,6 +38,14 @@ public class TreeEucalyptus extends TreeFamily {
 
         @Override
         public boolean isBiomePerfect(Biome biome) { return isOneOfBiomes(biome, Biomes.PLAINS); }
+
+        @Override
+        protected EnumFacing newDirectionSelected(EnumFacing newDir, GrowSignal signal) {
+            if (signal.isInTrunk() && newDir != EnumFacing.UP) { // Turned out of trunk
+                signal.energy *= 0.5f;
+            }
+            return newDir;
+        }
     }
 
     public TreeEucalyptus() {

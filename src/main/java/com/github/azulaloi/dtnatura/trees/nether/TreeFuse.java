@@ -27,11 +27,11 @@ public class TreeFuse extends TreeFamily {
         SpeciesFuse (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.fusewoodLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.4f, 8.0f, upProbability, lowestBranchHeight, 5f);
 
             setDynamicSapling(new BlockDynamicSapling("fusesapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.NETHER, 1.5f);
+            envFactor(BiomeDictionary.Type.NETHER, 1.4f);
 
             generateSeed();
             setupStandardSeedDropping();

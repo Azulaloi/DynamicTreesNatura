@@ -24,11 +24,11 @@ public class TreeSilverbell extends TreeFamily {
         SpeciesSilverbell (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.silverbellLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.5f, 7.0f, upProbability, lowestBranchHeight, 3f);
 
             setDynamicSapling(new BlockDynamicSapling("silverbellsapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.PLAINS, 1.5f);
+            envFactor(BiomeDictionary.Type.FOREST, 1.8f);
 
             generateSeed();
             setupStandardSeedDropping();

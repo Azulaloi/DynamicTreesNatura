@@ -1,8 +1,10 @@
 package com.github.azulaloi.dtnatura.trees.overworld;
 
 import com.ferreusveritas.dynamictrees.blocks.BlockDynamicSapling;
+import com.ferreusveritas.dynamictrees.items.Seed;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.TreeFamily;
+import com.github.azulaloi.dtnatura.items.ItemMapleSeed;
 import com.progwml6.natura.overworld.NaturaOverworld;
 import com.progwml6.natura.overworld.block.logs.BlockOverworldLog;
 import com.github.azulaloi.dtnatura.DynamicTreesNatura;
@@ -24,11 +26,11 @@ public class TreeMaple extends TreeFamily {
         SpeciesMaple (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.mapleLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.2f, 20.0f, upProbability, lowestBranchHeight, 6f);
 
             setDynamicSapling(new BlockDynamicSapling("maplesapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.PLAINS, 1.5f);
+            envFactor(BiomeDictionary.Type.FOREST, 1.5f);
 
             generateSeed();
             setupStandardSeedDropping();
@@ -36,6 +38,11 @@ public class TreeMaple extends TreeFamily {
 
         @Override
         public boolean isBiomePerfect(Biome biome) { return isOneOfBiomes(biome, Biomes.PLAINS); }
+
+        public ItemStack generateSeed() {
+            Seed seed = new ItemMapleSeed(getRegistryName().getResourcePath() + "seed");
+            return setSeedStack(new ItemStack(seed));
+        }
     }
 
     public TreeMaple() {
@@ -52,7 +59,6 @@ public class TreeMaple extends TreeFamily {
     public ItemStack getPrimitiveLogItemStack(int qty) {
         return new ItemStack(NaturaOverworld.overworldLog, MathHelper.clamp(qty, 0, 64), 0);
     }
-
 
     @Override
     public void createSpecies() {

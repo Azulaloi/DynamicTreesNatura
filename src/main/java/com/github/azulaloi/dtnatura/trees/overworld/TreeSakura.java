@@ -24,11 +24,11 @@ public class TreeSakura extends TreeFamily {
         SpeciesSakura (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.sakuraLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 8f);
+            setBasicGrowingParameters(0.4f, 14.0f, upProbability, lowestBranchHeight, 4f);
 
             setDynamicSapling(new BlockDynamicSapling("sakurasapling").getDefaultState());
 
-            envFactor(BiomeDictionary.Type.PLAINS, 1.5f);
+            envFactor(BiomeDictionary.Type.FOREST, 2.0f);
 
             generateSeed();
             setupStandardSeedDropping();

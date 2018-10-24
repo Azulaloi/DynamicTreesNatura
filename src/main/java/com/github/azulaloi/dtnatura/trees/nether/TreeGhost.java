@@ -27,7 +27,7 @@ public class TreeGhost extends TreeFamily {
         SpeciesGhost (TreeFamily treeFamily) {
             super(treeFamily.getName(), treeFamily, ModBlocks.ghostwoodLeavesProperties);
 
-            setBasicGrowingParameters(0.3f, 12.0f, 1, lowestBranchHeight, 8.8f);
+            setBasicGrowingParameters(0.5f, 10.0f, 1, lowestBranchHeight, 8.8f);
 
             setDynamicSapling(new BlockDynamicSapling("ghostsapling").getDefaultState());
 
