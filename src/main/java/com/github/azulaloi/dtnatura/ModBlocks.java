@@ -13,6 +13,7 @@ import com.ferreusveritas.dynamictrees.items.DendroPotion;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import com.ferreusveritas.dynamictrees.trees.TreeFamily;
 import com.github.azulaloi.dtnatura.blocks.BlockRootyNetherrack;
+import com.github.azulaloi.dtnatura.items.ItemMapleSeed;
 import com.progwml6.natura.nether.NaturaNether;
 import com.progwml6.natura.overworld.NaturaOverworld;
 import com.github.azulaloi.dtnatura.blocks.BlockDynamicLeavesPotash;
@@ -365,5 +366,6 @@ public class ModBlocks {
         int id = 0;
 
         EntityRegistry.registerModEntity(new ResourceLocation(DynamicTreesNatura.MODID, "blood_seed"), ItemBloodSeed.EntityItemBloodSeed.class, "blood_seed", id++, DynamicTreesNatura.MODID, 32, 1, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(DynamicTreesNatura.MODID, "maple_seed"), ItemMapleSeed.EntityItemMapleSeed.class, "maple_seed", id++, DynamicTreesNatura.MODID, 32, 1, true);
     }
 }
